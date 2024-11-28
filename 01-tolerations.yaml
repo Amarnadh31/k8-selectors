@@ -27,7 +27,7 @@ spec:
               - key: hardware
                 operator: In
                 values:
-                - ssd
+                - gpu
       containers:
       - name: nginx
         image: nginx
@@ -40,7 +40,7 @@ spec:
           effect: "NoSchedule"
         - key: "hardware"
           operator: "Equal"
-          value: "gpu"
+          value: "ssd"
           effect: "NoExecute"
 ---
 apiVersion: v1

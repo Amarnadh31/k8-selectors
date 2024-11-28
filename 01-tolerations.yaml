@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy
+  labels:
+    environment: dev
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      environment: dev
+      project: self
+      module: backend
+  template:
+    metadata:
+      name: deploy-pod
+      labels:
+        environment: dev
+        project: self
+        module: backend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+spec:
+  selector:
+    environment: dev
+    project: self
+    module: backend       
+  ports:
+  - name: deploy-port
+    protocol: TCP
+    port: 80
+    targetPort: 80

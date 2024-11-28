@@ -27,7 +27,7 @@ spec:
               - key: hardware
                 operator: In
                 values:
-                - gpu
+                - ssd
       containers:
       - name: nginx
         image: nginx

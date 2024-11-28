@@ -40,7 +40,7 @@ spec:
           effect: "NoSchedule"
         - key: "hardware"
           operator: "Equal"
-          value: "ssd"
+          value: "gpu"
           effect: "NoExecute"
 ---
 apiVersion: v1

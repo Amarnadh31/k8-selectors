@@ -23,10 +23,10 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: name
+          - key: project
             operator: In
             values:
-            - pod-1
+            - expense
         topologyKey: topology.kubernetes.io/zone
   containers:
   #docker run -d --name naginx nginx

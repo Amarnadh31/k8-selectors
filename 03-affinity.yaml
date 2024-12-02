@@ -29,6 +29,13 @@ spec:
                   operator: In
                   values:
                   - another-node-label-value
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: hardware
+                operator: In
+                values:
+                - gpu
       containers:
       - name: nginx
         image: nginx

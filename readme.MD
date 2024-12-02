@@ -13,4 +13,4 @@ kubectl taint nodes ip-192-168-19-108.ec2.internal hardware=gpu:NoExecute
 tolerance
 ----------
 
-kubectl label nodes ip-192-168-1-240.ec2.internal hardware=gpu
+kubectl label nodes ip-192-168-19-108.ec2.internal hardware=gpu

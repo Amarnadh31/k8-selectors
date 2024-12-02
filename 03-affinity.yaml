@@ -19,6 +19,16 @@ spec:
         project: self
         module: backend
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                - key: another-node-label-key
+                  operator: In
+                  values:
+                  - another-node-label-value
       containers:
       - name: nginx
         image: nginx

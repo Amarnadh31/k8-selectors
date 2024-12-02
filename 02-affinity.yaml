@@ -19,6 +19,15 @@ spec:
         project: self
         module: backend
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: hardware
+                operator: In
+                values:
+                - gpu
       containers:
       - name: nginx
         image: nginx

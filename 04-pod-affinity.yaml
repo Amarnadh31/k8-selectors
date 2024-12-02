@@ -9,3 +9,25 @@ spec:
   #docker run -d --name naginx nginx
   - name: nginx
     image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    project: expense
+spec:
+
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: name
+            operator: In
+            values:
+            - pod-1
+  containers:
+  #docker run -d --name naginx nginx
+  - name: nginx
+    image: nginx
